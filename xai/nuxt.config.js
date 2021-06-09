@@ -46,4 +46,15 @@ export default {
   generate: {
     dir: 'nuxt-public',
   },
+
+  // Custom Routes
+  router:{
+    extendRoutes(routes,resolve){
+      routes.push({
+        name: 'Logo',
+        path: '/logo',
+        component: resolve(__dirname, 'components/Logo.vue')
+      })
+    }
+  }
 }
