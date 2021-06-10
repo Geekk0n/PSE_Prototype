@@ -1,3 +1,10 @@
 <template>
-  <h1 class="text-primary">Was ist XAI</h1>
+  <div class="container">
+  <v-app>
+    <v-main>
+      <Navbar />
+      <ContentInfo />
+    </v-main>
+  </v-app>
+  </div>
 </template>

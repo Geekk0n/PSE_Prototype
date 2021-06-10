@@ -1,3 +1,10 @@
 <template>
-  <h1 class="text-primary">Mein Konto</h1>
+  <div class="container">
+  <v-app>
+    <v-main>
+      <Navbar />
+      <ContentKonto />
+    </v-main>
+  </v-app>
+  </div>
 </template>

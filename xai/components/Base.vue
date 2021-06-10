@@ -5,8 +5,8 @@
       <Content />
       <Logo />
     </v-main>
-    <!-- <Content /> -->
   </v-app>
+    <!-- <Content /> -->
 </template>
 
 <script lang="ts">

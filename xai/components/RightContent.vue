@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Right content</h1>
+    
   </div>
 </template>
 

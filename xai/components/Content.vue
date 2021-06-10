@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <h1>content</h1>
-      <LeftContent />
-      <RightContent />
-  </div>
+<v-container>
+  
+</v-container>
 </template>
 
 <script lang="ts">
@@ -12,3 +10,6 @@ export default {
   
 }
 </script>
+
+<style>
+</style>

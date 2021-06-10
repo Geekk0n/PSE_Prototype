@@ -1,3 +1,10 @@
 <template>
-  <h1 class="text-primary">An Studie teilnehmen</h1>
+  <div class="container">
+  <v-app>
+    <v-main>
+      <Navbar />
+      <ContentTeilnehmen />
+    </v-main>
+  </v-app>
+  </div>
 </template>

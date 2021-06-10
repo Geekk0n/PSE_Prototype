@@ -1,3 +1,10 @@
 <template>
-  <h1 class="text-primary">Benutzerverwaltung</h1>
+  <div class="container">
+  <v-app>
+    <v-main>
+      <Navbar />
+      <ContentBenutzerverwaltung />
+    </v-main>
+  </v-app>
+  </div>
 </template>

@@ -1,3 +1,10 @@
 <template>
-  <h1 class="text-primary">Studienverwaltung</h1>
+  <div class="container">
+  <v-app>
+    <v-main>
+      <Navbar />
+      <ContentStudienverwaltung />
+    </v-main>
+  </v-app>
+  </div>
 </template>
