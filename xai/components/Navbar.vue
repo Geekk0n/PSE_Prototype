@@ -1,25 +1,35 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <nuxt-link to="/mainpages/info" class="nav-link">Info Page</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link to="/mainpages/teilnehmen" class="nav-link" href="#">Teilnehmen</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link to="/mainpages/studienverwaltung" class="nav-link" href="#">Studienverwaltung</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link to="/mainpages/benutzerverwaltung" class="nav-link" href="#">Benutzerverwaltung</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link to="/mainpages/konto" class="nav-link" href="#">Mein Profil</nuxt-link>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <v-tabs
+    v-model="tab"
+    align-with-title
+    color="grey"
+  >
+    <v-tabs-slider color="grey"></v-tabs-slider>
+
+    <v-tab
+      v-for="item in items"
+      :key="item"
+    >
+      {{ item }}
+    </v-tab>
+  </v-tabs>
 </template>
+
+<script lang="ts">
+import {Vue,Component} from 'vue-property-decorator'
+export default class NavbarClass extends Vue{
+  tab=null;
+  items = ['Info Page','Teilnehmen','Studienverwaltung','Benutzerverwaltung','Mein Konto'];
+}
+</script>
+
+
+<style>
+/* Helper classes */
+.basil {
+  background-color: #FFFBE6 !important;
+}
+.basil--text {
+  color: #356859 !important;
+}
+</style>

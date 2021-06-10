@@ -2,9 +2,8 @@
   <div class="container">
     <div>
       <Base />
-      <!-- <Navbar /> -->
-      <Logo />
-      <h1 class="title">xai</h1>
+      <!-- <Logo /> -->
+      <!-- <h1 class="title">xai</h1> -->
     </div>
   </div>
 </template>
