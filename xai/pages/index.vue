@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <div>
-      <Navbar />
+      <Base />
+      <!-- <Navbar /> -->
       <Logo />
       <h1 class="title">xai</h1>
     </div>
@@ -12,7 +13,7 @@
 import Vue from 'vue'
 
 export default {
-  layout: 'navigation'
+  // layout: 'navigation'
 }
 </script>
 
