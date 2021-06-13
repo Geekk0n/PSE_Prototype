@@ -1,5 +1,4 @@
 <template>
-<div>
   <v-data-table
     :headers="headers"
     :items="studies"
@@ -28,17 +27,18 @@
           </tr>
       </template>
   </v-data-table>
-  <v-btn class="mx-2" dark small color="grey" @click="onButtonClick(row.item)">
-                    Neue Studie erstellen
-  </v-btn>
-</div>
 </template>
 
-<script>
-  export default {
-    data () {
-      return {
-        headers: [
+<script lang="ts">
+import {Vue,Component} from 'vue-property-decorator'
+import {getModule} from 'vuex-module-decorators'
+import StudyModule from '../../store/studies'
+
+@Component
+export default class StudienverwaltungClass extends Vue{
+  studyModule!:StudyModule;
+
+  headers= [
           {
             text: 'Name',
             align: 'start',
@@ -49,43 +49,19 @@
           { text: '', },
           { text: '', },
           { text: '', },
-        ],
-        studies: [
-          {
-            name: 'Study1',
-            status: 'Abgeschlossen',
-          },
-          {
-            name: 'Study2',
-            status: 'Laufend',
-          },
-          {
-            name: 'Study3',
-            status: 'Entwurf',
-          },
-          {
-            name: 'Study4',
-            status: 'Abgeschlossen',
-          },
-          {
-            name: 'Study5',
-            status: 'Abgeschlossen',
-          }, 
-          {
-            name: 'Study6',
-            status: 'Entwurf',
-          },
-          {
-            name: 'Study7',
-            status: 'Laufend',
-          },
-        ],
-      }
-    },
-    methods: {
-    onButtonClick(item) {
-      console.log('click on ' + item.no)
-    }
-    }
+  ];
+
+  get studies(){
+    return this.$store.state.studies.studies;
   }
+
+  async created(){
+    this.studyModule = getModule(StudyModule, this.$store);
+    await this.studyModule.loadStudies();
+  }
+
+  onButtonClick(item: { name: string; }) {
+      console.log('click on ' + item.name)
+    }
+}
 </script>

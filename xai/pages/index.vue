@@ -1,50 +1,25 @@
 <template>
-  <div class="container">
-    <div>
-      <Base />
-      <!-- <Logo /> -->
-      <!-- <h1 class="title">xai</h1> -->
-    </div>
-  </div>
+<v-app>
+  <Base />
+</v-app>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import {Vue,Component} from 'vue-property-decorator'
 
-export default {
-  // layout: 'navigation'
+@Component
+export default class MainClass extends Vue{
+  getUser(){
+    const path='http://localhost:5000/users';
+  }
+
+  // Created Lifycycle Hook
+  async created(){
+    // const data = await this.$axios.$get("http://localhost:5000/users");
+    // console.log(data);
+  }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
